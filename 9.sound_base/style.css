@@ -1,0 +1,36 @@
+:root {
+  --background-color: rgb(226, 165, 245);
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-color: var(--background-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn {
+  background-color: mediumorchid;
+  padding: 15px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}

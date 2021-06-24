@@ -1,0 +1,135 @@
+:root {
+  --primary-color: #047aed;
+  --secondary-color: #1c3fa8;
+  --dark-color: #002240;
+  --light-color: #f4f4f4;
+  --success-color: #5cb85c;
+  --error-color: #d9534f;
+  --light_white-color: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: var(--dark-color);
+  overflow-x: hidden;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: #e0e0e0;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  width: 100vw;
+}
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+.container .circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  z-index: 1;
+}
+.circle-container .circle {
+  background-color: #ff7979;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+
+  transition: transform 0.5s linear;
+}
+
+.circle button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: transparent;
+  color: #fff;
+  font-size: 26px;
+  height: 100px;
+  z-index: 3;
+  cursor: pointer;
+  border: 0;
+}
+
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 50px;
+  line-height: 25px;
+}
+
+.content h1:after {
+  content: "Florin Pop";
+  display: block;
+  font-size: 14px;
+  font-weight: 200;
+  margin: 5px 0;
+}
+.content h3 {
+  margin: 10px 0;
+}
+.content img {
+  max-width: 100%;
+  width: 500px;
+  height: 500px;
+}
+
+.container.show-nav + nav li {
+  transform: translateX(0);
+}
+
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+}
+nav ul {
+  list-style-type: none;
+  padding-left: 30px;
+}
+nav ul li {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 40px 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+}
+
+nav ul li i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+
+nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}

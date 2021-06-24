@@ -1,0 +1,91 @@
+:root {
+  --background-color: rgba(44, 44, 44, 0.37);
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  background-color: var(--background-color);
+}
+.faq-container {
+  width: 60%;
+}
+
+.faq {
+  border: solid 1px black;
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 20px;
+  position: relative;
+  margin: 20px;
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+
+.active {
+  background-color: white;
+  box-shadow: 1px 1px 5px black;
+}
+
+.faq.active::before,
+.faq.active::after {
+  content: "\f075";
+  font-family: "Font Awesome 5 Free";
+  font-size: 5rem;
+  position: absolute;
+  color: turquoise;
+  opacity: 0.2;
+}
+
+.faq.active::after {
+  color: blue;
+  top: -10px;
+  left: -24px;
+  transform: rotateY(180deg);
+  z-index: 0;
+}
+
+.faq p {
+  display: none;
+}
+
+.active p {
+  display: block;
+}
+
+.faq-toggle .fa-times {
+  display: none;
+}
+
+.faq.active .faq-toggle {
+  background-color: #9fa4a8;
+}
+.faq.active .faq-toggle .fa-times {
+  display: block;
+  color: white;
+}
+.faq.active .faq-toggle .fa-chevron-down {
+  display: none;
+}
+
+.faq-toggle {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 30px;
+  width: 30px;
+  padding: 0px;
+  align-items: center;
+  border-radius: 50%;
+}

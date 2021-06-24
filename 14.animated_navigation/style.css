@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+:root {
+  --background-color: #fff;
+  --body-color-top-half: #eafbff;
+  --body-color-bottom-half: #5290f9;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #eafbff;
+  background: linear-gradient(
+    to bottom,
+    #eafbff 0%,
+    #eafbff 50%,
+    #5290f9 50%,
+    #5290f9 100%
+  );
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  width: 80px;
+  transition: width 0.5s linear;
+  overflow: hidden;
+}
+
+.nav.active {
+  width: 350px;
+}
+.nav.active ul li {
+  opacity: 1;
+  transition: opacity 0.5s linear;
+  transform: rotateY(360deg);
+}
+
+nav.active ul {
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  margin: auto;
+  text-align: center;
+  width: 0;
+  justify-content: center;
+  list-style-type: none;
+}
+nav ul li {
+  margin: auto;
+  opacity: 0;
+  transform: rotateY(0deg);
+  transition: transform 0.6s linear opacity 0.6s linear;
+}
+
+nav ul li a {
+  text-decoration-line: none;
+  color: black;
+}
+
+.btn {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.btn .line {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  top: 10px;
+  left: 5px;
+  background-color: var(--body-color-bottom-half);
+  transition: transform 0.6s linear;
+}
+
+.btn .line.line2 {
+  top: 18px;
+}
+
+nav.active .btn .line.line1 {
+  transform: rotate(-765deg) translateY(5.5px);
+}
+
+nav.active .btn .line.line2 {
+  transform: rotate(765deg) translateY(-5.5px);
+}

@@ -1,0 +1,92 @@
+:root {
+  --background-color: #4bb2f6;
+  --background-login-form: #1e2594;
+  --line-border-empty: #e0e0e0;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-color: var(--background-color);
+}
+.container {
+  background-color: var(--background-login-form);
+  padding: 20px 30px;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+}
+.form-control {
+  margin: 10px 0px;
+  text-align: left;
+  font-size: 12px;
+  position: relative;
+}
+
+.form-control label {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+}
+
+.container input {
+  background-color: transparent;
+  padding: 5px 0px;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  display: block;
+  width: 100%;
+}
+
+.container input:focus,
+.container input:valid {
+  outline: none;
+  border-bottom-color: lightblue;
+}
+
+.container .btn {
+  background-color: rgb(124, 193, 253);
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+.login_form {
+  display: flex;
+  flex-direction: column;
+}
+.login_form .text {
+  font-size: 14px;
+}
+.login_form a {
+  padding: 0 5px;
+  color: turquoise;
+  text-decoration: none;
+}
+
+.form-control label span {
+  display: inline-block;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.255, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+  color: lightblue;
+  transform: translateY(-15px);
+}
