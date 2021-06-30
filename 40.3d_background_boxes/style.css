@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,4 +13,71 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+}
+
+.magic {
+  border: 0;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  letter-spacing: 1px;
+  background-color: steelblue;
+  padding: 10px;
+}
+
+.magic:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  height: 500px;
+  width: 500px;
+  justify-content: space-around;
+  position: relative;
+  transition: 0.5s ease;
+}
+.box {
+  background-image: url("https://media.giphy.com/media/EZqwsBSPlvSda/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: 500px 500px;
+  position: relative;
+  height: 125px;
+  width: 125px;
+  transition: 0.5s ease;
+}
+
+.boxes.big .box {
+  transform: rotateZ(360deg);
+}
+
+.boxes.big {
+  width: 600px;
+  height: 600px;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  background-color: #f6e58d;
+  top: 8px;
+  right: -15px;
+  height: 100%;
+  width: 15px;
+  transform: skewY(45deg);
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  background-color: #f6e58d;
+  left: 8px;
+  bottom: -15px;
+  height: 15px;
+  width: 100%;
+  transform: skewX(45deg);
 }
